@@ -1,0 +1,52 @@
+# Project: ListaEncadeada
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o apresentarAviao.o ApresentarPassageiro.o inicializarAviao.o inicializarPassageiro.o inserirAviao.o inserirPassageiro.o consultarPassageiro.o excluirPassageiro.o
+LINKOBJ  = main.o apresentarAviao.o ApresentarPassageiro.o inicializarAviao.o inicializarPassageiro.o inserirAviao.o inserirPassageiro.o consultarPassageiro.o excluirPassageiro.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = ListaEncadeada.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+apresentarAviao.o: apresentarAviao.cpp
+	$(CPP) -c apresentarAviao.cpp -o apresentarAviao.o $(CXXFLAGS)
+
+ApresentarPassageiro.o: ApresentarPassageiro.cpp
+	$(CPP) -c ApresentarPassageiro.cpp -o ApresentarPassageiro.o $(CXXFLAGS)
+
+inicializarAviao.o: inicializarAviao.cpp
+	$(CPP) -c inicializarAviao.cpp -o inicializarAviao.o $(CXXFLAGS)
+
+inicializarPassageiro.o: inicializarPassageiro.cpp
+	$(CPP) -c inicializarPassageiro.cpp -o inicializarPassageiro.o $(CXXFLAGS)
+
+inserirAviao.o: inserirAviao.cpp
+	$(CPP) -c inserirAviao.cpp -o inserirAviao.o $(CXXFLAGS)
+
+inserirPassageiro.o: inserirPassageiro.cpp
+	$(CPP) -c inserirPassageiro.cpp -o inserirPassageiro.o $(CXXFLAGS)
+
+consultarPassageiro.o: consultarPassageiro.cpp
+	$(CPP) -c consultarPassageiro.cpp -o consultarPassageiro.o $(CXXFLAGS)
+
+excluirPassageiro.o: excluirPassageiro.cpp
+	$(CPP) -c excluirPassageiro.cpp -o excluirPassageiro.o $(CXXFLAGS)
